@@ -1,0 +1,21 @@
+<nav id="navbar" class="bg-sheet z-10 fixed top-0 left-0 right-0 w-full">
+  <div class="flex items-center justify-between h-14 pt-8 pb-10 px-16">
+    <div class="flex items-center gap-x-6">
+      <%= link_to root_path do %>
+        <div class="flex items-center ">
+          <span class="font-medium text-xl sm:text-xl tracking-tight"><b>Talkstarter</b></span>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="hidden sm:flex items-center gap-x-4">
+      <%= link_to_active "#", active_class: "active_app_nav_link", class: "text-sm font-medium hover:text-gray-highlight hover:cursor-pointer" do %>
+        <span class="">Talks</span>
+      <% end %>
+
+      <%= link_to_active "#", active_class: "active_app_nav_link", class: "text-sm font-medium hover:text-gray-highlight hover:cursor-pointer" do %>
+        <span>Discover</span>
+      <% end %> 
+    </div>
+  </div>
+</nav>

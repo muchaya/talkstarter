@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+  --color-green: #00c585;
+  --color-sheet: #eeece3;
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Lora", sans;
+}

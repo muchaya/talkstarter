@@ -23,8 +23,11 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+    <main class="font-sans mx-auto flex bg-sheet text-gray-900">
+      <%= render "layouts/navbar" %>
+      <div class="font-sans bg-sheet min-h-[100vh] px-16">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>
