@@ -4,9 +4,7 @@
 
   <div class="mt-12">
     <% @proposals.each do |proposal| %>
-      <%= link_to proposal.title, proposal_path(proposal), class: "block" %>
+      <%= link_to proposal.id, proposal_path(proposal), class: "block" %>
     <% end %>
   </div>
-  
- 
 </section>

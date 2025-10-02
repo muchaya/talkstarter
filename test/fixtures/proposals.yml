@@ -1,15 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  accepts_commitments_from: 2025-09-30 10:53:02
-  accepts_commitments_until: 2025-12-30 10:53:02
-  title: Proposal 1
   status: "draft"
   strategy: "pick_one"
 
 two:
-  accepts_commitments_from: 2025-09-30 10:53:02
-  accepts_commitments_until: 2012-09-30 10:53:02
-  title: Proposal 2
   status: "draft"
   strategy: "pick_one"

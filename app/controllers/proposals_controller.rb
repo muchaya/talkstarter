@@ -1,4 +1,6 @@
 class ProposalsController < ApplicationController
+  layout "plain", only: :show
+  
   def new
     @proposal = Proposal.new
   end

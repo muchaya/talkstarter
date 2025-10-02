@@ -1,0 +1,76 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: "Marketing for Indie Hackers"
+  description: "A practical session on how indie founders can build an audience and get their first customers without big budgets."
+  price: 25.00
+  accepts_supporters_from: 2025-10-01 09:00:00
+  accept_supporters_until: 2025-10-10 23:59:59
+  scheduled_for: 2025-10-15 18:00:00
+  min_supporters: 20
+  max_supporters: 100
+  status: "draft"
+  visibility: "public"
+  timezone: "UTC"
+  duration_in_minutes: 60
+  proposal: one
+
+two:
+  title: "Getting Your First 100 Sales Online"
+  description: "Learn step by step how to make your first $1,000 on the internet by closing your first 100 sales. Covers positioning, pricing, and outreach."
+  price: 25.00
+  accepts_supporters_from: 2025-10-01 09:00:00
+  accept_supporters_until: 2025-10-12 23:59:59
+  scheduled_for: 2025-10-20 17:00:00
+  min_supporters: 25
+  max_supporters: 150
+  status: "published"
+  visibility: "public"
+  timezone: "CAT"
+  duration_in_minutes: 90
+  proposal: one
+
+three:
+  title: "The Future of Remote Work"
+  description: "Daniel shares insights on where remote work is headed and what opportunities exist for small creators and founders."
+  price: 25.00
+  accepts_supporters_from: 2025-10-01 09:00:00
+  accept_supporters_until: 2025-10-14 23:59:59
+  scheduled_for: 2025-10-22 19:00:00
+  min_supporters: 30
+  max_supporters: 200
+  status: "published"
+  visibility: "public"
+  timezone: "UTC"
+  duration_in_minutes: 60
+  proposal: one
+
+four:
+  title: "Scaling from 0 → 1,000 Customers"
+  description: "Jane breaks down the tactics she used to grow her SaaS from zero to a thousand paying users."
+  price: 40.00
+  accepts_supporters_from: 2025-10-02 09:00:00
+  accept_supporters_until: 2025-10-12 23:59:59
+  scheduled_for: 2025-10-18 16:00:00
+  min_supporters: 15
+  max_supporters: 100
+  status: "draft"
+  visibility: "public"
+  timezone: "UTC"
+  duration_in_minutes: 75
+  proposal: two
+
+five:
+  title: "Fundraising Without Venture Capital"
+  description: "An honest conversation about bootstrapping, revenue-based financing, and alternatives to VC money."
+  price: 40.00
+  accepts_supporters_from: 2025-10-02 09:00:00
+  accept_supporters_until: 2025-10-13 23:59:59
+  scheduled_for: 2025-10-19 15:00:00
+  min_supporters: 20
+  max_supporters: 120
+  status: "published"
+  visibility: "public"
+  timezone: "UTC"
+  duration_in_minutes: 60
+  proposal: two
