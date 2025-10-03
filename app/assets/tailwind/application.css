@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
 @theme {
+  --color-dark-yellow-brown: #5c5a4d;
   --color-gray-pale: #f6f8fb;
   --color-green: #00c585;
+  --color-orange: #ec5017;
   --color-sheet: #eeece3;
+  --color-sheet-pale: #f5f4ec;
+  --font-logo: "Niconne", serif;
   --font-sans: "Montserrat", sans-serif;
   --font-serif: "Lora", sans;
 }

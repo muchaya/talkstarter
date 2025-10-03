@@ -1,21 +1,27 @@
-<nav id="navbar" class="bg-sheet z-10 fixed top-0 left-0 right-0 w-full border-b border-gray-500">
-  <div class="flex items-center justify-between h-14 py-6 px-16">
+<nav id="navbar" class="bg-sheet z-10 fixed top-0 left-0 right-0 w-full">
+  <div class="flex items-center justify-between h-14 py-10 px-16">
     <div class="flex items-center gap-x-6">
       <%= link_to root_path do %>
         <div class="flex items-center ">
-          <span class="font-medium text-xl sm:text-xl tracking-tight"><b>Talkstarter</b></span>
+          <span class="tracking-tight text-xl italic font-bold block text-center py-8">talkstarter.</span>
         </div>
       <% end %>
     </div>
 
-    <div class="hidden sm:flex items-center gap-x-4">
+    <div class="hidden sm:flex items-center gap-x-6">
       <%= link_to_active "#", active_class: "active_app_nav_link", class: "text-sm font-medium hover:text-gray-highlight hover:cursor-pointer" do %>
-        <span class="">Talks</span>
       <% end %>
 
-      <%= link_to_active "#", active_class: "active_app_nav_link", class: "text-sm font-medium hover:text-gray-highlight hover:cursor-pointer" do %>
-        <span>Discover</span>
-      <% end %> 
+      <% if authenticated? %>
+        <%= link_to_active user_path(Current.user), active_class: "active_app_nav_link", class: "text-sm font-medium hover:text-gray-highlight hover:cursor-pointer" do %>
+          <span>Account</span>
+        <% end %>
+        <%= button_to "Sign Out", session_path, class: "text-sm font-medium hover:text-gray-highlight hover:cursor-pointer", method: :delete  %>
+      <% else %>
+        <%= link_to "Log in", new_session_path, class: "text-sm font-medium hover:text-gray-highlight hover:cursor-pointer" %>
+        <%= link_to "Signup", new_registration_path, class: "text-sm font-medium hover:text-gray-highlight hover:cursor-pointer" %>
+        <%= link_to "Become a creator", "#", class: "tracking-tight bg-stone-300 text-black rounded-full px-5 py-[12px] text-base font-medium hover:text-gray-highlight hover:cursor-pointer" %>
+      <% end%>
     </div>
   </div>
 </nav>

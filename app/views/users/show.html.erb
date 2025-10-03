@@ -1,0 +1,22 @@
+<div class="mt-24">
+  
+  <div class="w-1/2 mx-auto">
+    <div class="border-b border-gray-300 mx-auto mb-3">
+      <p class="font-medium text-slate-500 text-sm w-screen pb-1">Personal Accounts</p>
+    </div>
+
+    <% @memberships.each do |membership| %>
+      <div class="flex items-center justify-between">
+        <div class=" flex items-center gap-x-2">
+          <div class="border border-slate-200 bg-green-200 h-12 w-12 rounded-md"></div>
+            <div class="flex flex-col">
+              <p class="font-medium"><%= membership.account.title %></p>
+              <p class="text-xs text-gray-500">Joined May 2025</p>
+            </div>
+          </div>  
+          <%= inline_svg_tag "caret.svg", class: "stroke-gray-300 block stroke-[0.01px] fill-gray-300 w-12"%>
+        </div>
+      <div>
+    <% end %>
+  </div>
+</div>

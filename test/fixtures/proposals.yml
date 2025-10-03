@@ -3,7 +3,9 @@
 one:
   status: "draft"
   strategy: "pick_one"
+  user: one
 
 two:
   status: "draft"
   strategy: "pick_one"
+  user: two

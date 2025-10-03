@@ -1,4 +1,6 @@
 class ProposalsController < ApplicationController
+  allow_unauthenticated_access
+
   layout "plain", only: :show
   
   def new

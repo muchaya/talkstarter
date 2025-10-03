@@ -1,10 +1,16 @@
-<section class="mt-28">
+<section class="mt-36">
   <h1 class="text-6xl font-extrabold font-serif tracking-tight">The kickstarter for</h1>
   <h1 class="text-6xl font-extrabold font-serif tracking-tight">online talks, AMAs and more.</h1>
 
   <div class="mt-12">
     <% @proposals.each do |proposal| %>
-      <%= link_to proposal.id, proposal_path(proposal), class: "block" %>
+      <%= link_to proposal.user.email_address, proposal_path(proposal), class: "block" %>
     <% end %>
   </div>
 </section>
+
+<p class="mt-16 mb-3">Users</p><br>
+
+<% User.all.each do |user| %>
+  <%= link_to user.email_address, user_path(user) %><br>
+<% end %>

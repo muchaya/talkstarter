@@ -3,6 +3,7 @@ class CreateProposals < ActiveRecord::Migration[8.0]
     create_table :proposals do |t|
       t.string :status
       t.string :strategy
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

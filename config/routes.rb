@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root "proposals#index"
 
+  resources :passwords, param: :token
   resources :proposals, only: [:index, :show, :new] 
-
+  resource :session
+  resource :registration, only: %i[new create]
+  resources :users, only: :show
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -1,4 +1,12 @@
 @font-face {
+  font-family: "Niconne";
+  src: url("Niconne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Montserrat";
   src: url("Montserrat-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
