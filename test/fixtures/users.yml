@@ -1,11 +1,19 @@
 <% password_digest = BCrypt::Password.create("password") %>
 
 one:
-  name: Daniel Vessels
+  fullname: Daniel Vessels
   email_address: daniel@smallbets.com
   password_digest: <%= password_digest %>
+  role: creator
 
 two:
-  name: Avid Kaul
+  fullname: Avid Kaul
   email_address: jane@hey.com
   password_digest: <%= password_digest %>
+  role: creator
+
+three:
+  fullname: John Smith
+  email_address: john@gmail.com
+  password_digest: <%= password_digest %>
+  role: backer

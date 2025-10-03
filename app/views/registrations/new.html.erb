@@ -9,61 +9,85 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <h1 class="font-extrabold text-4xl tracking-tight">Sign up to continue</h1>
-  <p class="my-8 tracking-tight">This is the start of something good.</p>
+  <section data-controller="form-toggler">
+    <div data-form-toggler-target="form" class="hidden">
+      <h1 class="font-extrabold text-4xl tracking-tight">Sign up to continue</h1>
+      <p class="my-8 tracking-tight">This is the start of something good.</p>
 
-  <%= form_with url: session_url, class: "" do |form| %>
-    <div class="my-4">
-      <%= link_to "#", class: "py-3 rounded-md block border border-gray-600" do %>
-        <div class="flex items-center w-fit mx-auto gap-x-2">
-          <%= inline_svg_tag "google_color.svg", class: "w-5" %>
-          <p class="font-medium tracking-tight text-[15px]">Continue with Google</p>
+      <%= form_with url: session_url, class: "" do |form| %>
+        <div class="my-4">
+          <%= link_to "#", class: "py-3 rounded-md block border border-gray-600" do %>
+            <div class="flex items-center w-fit mx-auto gap-x-2">
+              <%= inline_svg_tag "google_color.svg", class: "w-5" %>
+              <p class="font-medium tracking-tight text-[15px]">Continue with Google</p>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
 
-    <div class="my-4">
-      <%= link_to "#", class: "py-3 rounded-md block border border-gray-600" do %>
-        <div class="flex items-center w-fit mx-auto gap-x-2">
-          <%= inline_svg_tag "facebook_color.svg", class: "w-6" %>
-          <p class="font-medium tracking-tight text-[15px]">Continue with Facebook</p>
+        <div class="my-4">
+          <%= link_to "#", class: "py-3 rounded-md block border border-gray-600" do %>
+            <div class="flex items-center w-fit mx-auto gap-x-2">
+              <%= inline_svg_tag "facebook_color.svg", class: "w-6" %>
+              <p class="font-medium tracking-tight text-[15px]">Continue with Facebook</p>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
 
-    <%= link_to "Continue with your email", "#", class: "block w-full text-center rounded-md py-3 tracking-tight text-[15px] bg-orange text-white font-[600] cursor-pointer" %>
+        <%= link_to "Continue with your email", "#", data: { action: "click->form-toggler#toggle"}, class: "block w-full text-center rounded-md py-3 tracking-tight text-[15px] bg-orange text-white font-[600] cursor-pointer" %>
 
-    <div class="flex items-center gap-x-2 my-6">
-      <div class="border-b border-gray-400 h-[1px] w-full"></div>
-      <p>or</p>
-      <div class="border-b border-gray-400 h-[1px] w-full"></div>
-    </div>
-
-    <div class="flex items-center gap-x-2 bg-sheet-pale p-2 py-1 rounded-lg">
-      <div class="flex items-center gap-x-4">
-        <div class="flex flex-col gap-y-1 p-2">
-          <p class="font-bold tracking-tight text-sm">Become a creator</p>
-          <p class="text-dark-yellow-brown tracking-tight text-sm font-medium -mt-1">Start your first talkstarter. Stop wasting prep time, Only speak when there's guaranteed demand.</p>
+        <div class="flex items-center gap-x-2 my-6">
+          <div class="border-b border-gray-400 h-[1px] w-full"></div>
+          <p>or</p>
+          <div class="border-b border-gray-400 h-[1px] w-full"></div>
         </div>
-      </div>
-      <%= inline_svg_tag "caret_v2.svg", class: "w-4 stroke-gray-500 fill-gray-500" %>
+
+        <div class="flex items-center gap-x-2 bg-sheet-pale p-2 py-1 rounded-lg">
+          <div class="flex items-center gap-x-4">
+            <div class="flex flex-col gap-y-1 p-2">
+              <p class="font-bold tracking-tight text-sm">Become a creator</p>
+              <p class="text-dark-yellow-brown tracking-tight text-sm font-medium -mt-1">Start your first talkstarter. Stop wasting prep time, Only speak when there's guaranteed demand.</p>
+            </div>
+          </div>
+          <%= inline_svg_tag "caret_v2.svg", class: "w-4 stroke-gray-500 fill-gray-500" %>
+        </div>
+
+        <%= link_to "Forgot password?", new_password_path, class: "mt-6 font-medium text-[13px] block text-gray-700 underline underline-offset-4 decoration-gray-400 hover:no-underline" %>
+
+        <div class="flex items-center mt-5 text-[13px] text-gray-700 gap-x-1 font-medium">
+          <p class="">Already have an account?</p>
+          <%= link_to "Sign in", new_session_path, class: "underline underline-offset-4 decoration-gray-400 hover:no-underline" %>
+        </div>
+
+        <p class="text-[13px] font-medium mt-6 text-dark-yellow-brown">By continuing, you agree to Talkstarter's terms and privacy policy.</p>
+    <% end %>
     </div>
 
-    <%= link_to "Forgot password?", new_password_path, class: "mt-6 font-medium text-[13px] block text-gray-700 underline underline-offset-4 decoration-gray-400 hover:no-underline" %>
+    <div data-form-toggler-target="form">
+      <h1 class="font-extrabold text-4xl tracking-tight">Sign up to continue</h1>
+      <p class="my-8 tracking-tight">Let's get started.</p>
 
-    <div class="flex items-center mt-5 text-[13px] text-gray-700 gap-x-1 font-medium">
-      <p class="">Already have an account?</p>
-      <%= link_to "Sign in", new_session_path, class: "underline underline-offset-4 decoration-gray-400 hover:no-underline" %>
-    </div>
+      <%= form_with url: session_url, class: "" do |form| %>
+        <div class="my-8">
+          <%= form.text_field :fullname, required: true, autocomplete: "fullname", placeholder: "Enter your full name", class: "block rounded-md border border-dark-yellow-brown focus:border-gray-600 focus:border-2 outline-0 px-3 py-4 mt-2 w-full" %>
+        </div>
 
-    <p class="text-[13px] font-medium mt-6 text-dark-yellow-brown">By continuing, you agree to Talkstarter's terms and privacy policy.</p>
-    
-    <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
- 
+        <div class="my-8">
+          <%= form.email_field :email_address, required: true, autocomplete: "email_address", placeholder: "Enter your email address", class: "block rounded-md border border-dark-yellow-brown focus:border-gray-600 focus:border-2 outline-0 px-3 py-4 mt-2 w-full" %>
+        </div>
 
-      <div class="mt-4 text-sm text-gray-500 sm:mt-0">
-        
-      </div>
-    </div>
-  <% end %>
+        <div class="my-8">
+          <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "block rounded-md border border-dark-yellow-brown focus:border-gray-600 focus:border-2 outline-0 px-3 py-4 mt-2 w-full" %>
+        </div>
+
+        <%= form.submit "Sign up", class: "w-full text-center rounded-md py-3 text-base bg-orange text-white font-medium cursor-pointer" %>
+
+        <div class="flex items-center mt-5 text-[13px] text-gray-700 gap-x-1 font-medium">
+          <p class="">Already have an account?</p>
+          <%= link_to "Sign in", new_session_path, class: "underline underline-offset-4 decoration-gray-400 hover:no-underline" %>
+        </div>
+
+        <p class="text-[13px] font-medium mt-6 text-dark-yellow-brown">By continuing, you agree to Talkstarter's terms and privacy policy.</p>
+    <% end %>
+    </div>      
+  </section>
 </div>
