@@ -9,9 +9,3 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
-
-.logo-skewed {
-  display: inline-block;
-  transform: skewX(9deg);
-  font-style: italic;
-}

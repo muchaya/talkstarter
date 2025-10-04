@@ -49,4 +49,8 @@ module Authentication
       Current.session.destroy
       cookies.delete(:session_id)
     end
+
+    def after_registration_url
+      Current.user.backer? ? my_talks_path : root_url
+    end
 end

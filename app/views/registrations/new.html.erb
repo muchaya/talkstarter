@@ -66,7 +66,7 @@
       <h1 class="font-extrabold text-4xl tracking-tight">Sign up to continue</h1>
       <p class="my-8 tracking-tight">Let's get started.</p>
 
-      <%= form_with url: session_url, class: "" do |form| %>
+      <%= form_with model: User.new, url: registration_url, class: "" do |form| %>
         <div class="my-8">
           <%= form.text_field :fullname, required: true, autocomplete: "fullname", placeholder: "Enter your full name", class: "block rounded-md border border-dark-yellow-brown focus:border-gray-600 focus:border-2 outline-0 px-3 py-4 mt-2 w-full" %>
         </div>
@@ -76,7 +76,11 @@
         </div>
 
         <div class="my-8">
-          <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "block rounded-md border border-dark-yellow-brown focus:border-gray-600 focus:border-2 outline-0 px-3 py-4 mt-2 w-full" %>
+          <%= form.password_field :password, required: true, autocomplete: "new-password", placeholder: "Enter your password", maxlength: 72, class: "block rounded-md border border-dark-yellow-brown focus:border-gray-600 focus:border-2 outline-0 px-3 py-4 mt-2 w-full" %>
+        </div>
+
+        <div class="my-8">
+          <%= form.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: "Enter your password confirmation", maxlength: 72, class: "block rounded-md border border-dark-yellow-brown focus:border-gray-600 focus:border-2 outline-0 px-3 py-4 mt-2 w-full" %>
         </div>
 
         <%= form.submit "Sign up", class: "w-full text-center rounded-md py-3 text-base bg-orange text-white font-medium cursor-pointer" %>

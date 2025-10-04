@@ -9,9 +9,13 @@ class User < ApplicationRecord
 
   after_create :set_up_account
 
+  def backer?
+    role == "backer"
+  end
+
   private
     def set_up_account
-      account = Account.create(title: name, email: email_address)
+      account = Account.create(title: fullname, email: email_address)
     
       account.grant_access_to self
     end

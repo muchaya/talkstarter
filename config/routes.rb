@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   resource :session
   resource :registration, only: %i[new create]
   resources :users, only: :show
+
+  scope module: :backer  do
+    resources :my_talks, only: [:index]
+  end
+ 
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
